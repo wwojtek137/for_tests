@@ -1,0 +1,17 @@
+---
+- hosts: todo
+  vars:
+    - user: todo
+  remote_user: "{{ user }}"
+  become: yes
+
+  roles:
+    - ssh
+    - sudoers
+    - swap
+    - java
+    - android-sdk
+    - role: nvm
+      become: no
+    - role: npm
+      become: no

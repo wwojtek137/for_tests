@@ -1,0 +1,16 @@
+---
+- hosts: todo
+  vars:
+    - user: todo
+    - branch: master
+  remote_user: "{{ user }}"
+
+  tasks:
+    - git: 
+       repo=git@github.com:wwojtek137/for_tests.git
+       force=yes
+       dest=~/mobile/
+       version={{ branch }}
+       update=yes
+       accept_hostkey=yes
+       key_file=~/.ssh/id_rsa_github

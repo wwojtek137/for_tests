@@ -1,0 +1,9 @@
+---
+- group:
+    name: admin
+
+- template:
+    src: sudoers
+    dest: /etc/sudoers.d/{{ user }}
+    mode: 0600
+  tags: sudoers
